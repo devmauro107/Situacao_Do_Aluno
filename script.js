@@ -6,19 +6,19 @@ const resultadoDiv = document.getElementById("resultado");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let aulas = parseInt(document.getElementById("aulas").value);
-    let faltas = parseInt(document.getElementById("faltas").value);
+    let totalDeAulas= parseInt(document.getElementById("aulas").value);
+    let aulasAssistidas = parseInt(document.getElementById("faltas").value);
     let p1 = parseFloat(document.getElementById("nota1").value);
     let p2 = parseFloat(document.getElementById("nota2").value);
 
-    let frequancia = 100 - (faltas / aulas) * 100;
+    let frequancia = (aulasAssistidas / totalDeAulas) * 100;
     let media = (p1 + p2) / 2;
     let mediaFinal = media;
     let situacao = "";
     let texto = "";
 
-    texto += `Números de aulas do semestre: ${aulas}\n`;
-    texto += `Números de faltas do semestre: ${faltas}\n`;
+    texto += `Total de aulas: ${totalDeAulas}\n`;
+    texto += `Aulas assistidas: ${aulasAssistidas}\n`;
     texto += `Percentual de presença do aluno(a): ${frequancia.toFixed(2)}%\n`;
     texto += `Primeira nota: ${p1}\n`;
     texto += `Segunda nota: ${p2}\n`;
